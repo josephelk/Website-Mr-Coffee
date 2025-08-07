@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MR.COFFEE - Order</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <header id="main-header">
+        <div class="container">
+            <div id="brand-logo" class="logo">
+                <a href="index.html">MR.COFFEE</a>
+            </div>
+            <nav id="main-nav">
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="rewards.html">Rewards</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="order.html" class="active">Order</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="order-section" class="order-section">
+            <div class="container">
+                <h1>Place Your Order</h1>
+                <p class="order-intro">Choose your favorite items and we'll prepare them fresh for you. Pickup or delivery available.</p>
+                
+                <div id="order-form-container" class="order-form-container">
+                    <form id="order-form">
+                        <!-- Customer Information -->
+                        <div class="form-group">
+                            <label for="name">Full Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required>
+                            <div class="error-message" id="name-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="error-message" id="email-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" required>
+                            <div class="error-message" id="phone-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="order-type">Order Type <span class="required">*</span></label>
+                            <select id="order-type" name="order-type" required>
+                                <option value="">Select order type</option>
+                                <option value="pickup">Pickup</option>
+                                <option value="delivery">Delivery</option>
+                            </select>
+                            <div class="error-message" id="order-type-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Delivery Address</label>
+                            <textarea id="address" name="address" placeholder="Enter your delivery address (required for delivery orders)"></textarea>
+                            <div class="error-message" id="address-error"></div>
+                        </div>
+
+                        <!-- Menu Items Selection -->
+                        <div class="form-group">
+                            <label>Select Your Items <span class="required">*</span></label>
+                            
+                            <!-- Espresso Category -->
+                            <h4>Espresso</h4>
+                            <div id="menu-selection" class="menu-selection">
+                                <div class="menu-item-checkbox">
+                                    <input type="checkbox" id="classic-espresso" name="items" value="Classic Espresso" data-price="3.50">
+                                    <label for="classic-espresso">Classic Espresso - $3.50</label>
+                                </div>
+                                <div class="menu-item-checkbox">
+                                    <input type="checkbox" id="americano" name="items" value="Americano" data-price="4.00">
+                                    <label for="americano">Americano - $4.00</label>
+                                </div>
+                                <div class="menu-item-checkbox">
+                                    <input type="checkbox" id="cappuccino" name="items" value="Cappuccino" data-price="4.75">
+                                    <label for="cappuccino">Cappuccino - $4.75</label>
+                                </div>
+                                <div class="menu-item-checkbox">
+                                    <input type="checkbox" id="latte" name="items" value="Latte" data-price="4.50">
+                                    <label for="latte">Latte - $4.50</label>
+                                </div>
+                            </div>
+
+                            <!-- Frappe Category -->
+                            <h4>Frappe</h4>
+                            <div class="menu-selection">
+                                <div class="menu-item-checkbox">
+                                    <input type="checkbox" id="mocha-frappe" name="items" value="Mocha Frappe" data-price="5.50">
+                                    <label for="mocha-frappe">Mocha Frappe - $5.50</label>
+                                </div>
+                                <div class="menu-item-checkbox">
+                                    <input type="checkbox" id="caramel-frappe" name="items" value="Caramel Frappe" data-price="5.75">
+                                    <label for="caramel-frappe">Caramel Frappe - $5.75</label>
+                                </div>
+                                <div class="menu-item-checkbox">
+                                    <input type="checkbox" id="vanilla-frappe" name="items" value="Vanilla Frappe" data-price="5.25">
+                                    <label for="vanilla-frappe">Vanilla Frappe - $5.25</label>
+                                </div>
+                                <div class="menu-item-checkbox">
+                                    <input type="checkbox" id="matcha-frappe" name="items" value="Matcha Frappe" data-price="5.50">
+                                    <label for="matcha-frappe">Matcha Frappe - $5.50</label>
+                                </div>
+                            </div>
+
+                            <!-- Brewed Category -->
+                            <h4>Brewed</h4>
+                            <div class="menu-selection">
+                                <div class="menu-item-checkbox">
+                                    <input type="checkbox" id="pour-over" name="items" value="Pour Over" data-price="4.25">
+                                    <label for="pour-over">Pour Over - $4.25</label>
+                                </div>
+                                <div class="menu-item-checkbox">
+                                    <input type="checkbox" id="french-press" name="items" value="French Press" data-price="4.50">
+                                    <label for="french-press">French Press - $4.50</label>
+                                </div>
+                                <div class="menu-item-checkbox">
+                                    <input type="checkbox" id="cold-brew" name="items" value="Cold Brew" data-price="4.75">
+                                    <label for="cold-brew">Cold Brew - $4.75</label>
+                                </div>
+                                <div class="menu-item-checkbox">
+                                    <input type="checkbox" id="drip-coffee" name="items" value="Drip Coffee" data-price="3.25">
+                                    <label for="drip-coffee">Drip Coffee - $3.25</label>
+                                </div>
+                            </div>
+
+                            <!-- Pastry Category -->
+                            <h4>Pastry</h4>
+                            <div class="menu-selection">
+                                <div class="menu-item-checkbox">
+                                    <input type="checkbox" id="butter-croissant" name="items" value="Butter Croissant" data-price="3.25">
+                                    <label for="butter-croissant">Butter Croissant - $3.25</label>
+                                </div>
+                                <div class="menu-item-checkbox">
+                                    <input type="checkbox" id="cinnamon-roll" name="items" value="Cinnamon Roll" data-price="3.75">
+                                    <label for="cinnamon-roll">Cinnamon Roll - $3.75</label>
+                                </div>
+                                <div class="menu-item-checkbox">
+                                    <input type="checkbox" id="blueberry-muffin" name="items" value="Blueberry Muffin" data-price="3.50">
+                                    <label for="blueberry-muffin">Blueberry Muffin - $3.50</label>
+                                </div>
+                                <div class="menu-item-checkbox">
+                                    <input type="checkbox" id="chocolate-chip-cookie" name="items" value="Chocolate Chip Cookie" data-price="2.75">
+                                    <label for="chocolate-chip-cookie">Chocolate Chip Cookie - $2.75</label>
+                                </div>
+                            </div>
+
+                            <div class="error-message" id="items-error"></div>
+                        </div>
+
+                        <!-- Add-ons -->
+                        <div class="form-group">
+                            <label>Add-ons (Optional)</label>
+                            <div id="addon-selection" class="addon-selection">
+                                <div class="addon-item">
+                                    <input type="checkbox" id="extra-shot" name="addons" value="Extra Shot" data-price="0.75">
+                                    <label for="extra-shot">Extra Shot - $0.75</label>
+                                </div>
+                                <div class="addon-item">
+                                    <input type="checkbox" id="extra-foam" name="addons" value="Extra Foam" data-price="0.50">
+                                    <label for="extra-foam">Extra Foam - $0.50</label>
+                                </div>
+                                <div class="addon-item">
+                                    <input type="checkbox" id="soy-milk" name="addons" value="Soy Milk" data-price="0.60">
+                                    <label for="soy-milk">Soy Milk - $0.60</label>
+                                </div>
+                                <div class="addon-item">
+                                    <input type="checkbox" id="almond-milk" name="addons" value="Almond Milk" data-price="0.60">
+                                    <label for="almond-milk">Almond Milk - $0.60</label>
+                                </div>
+                                <div class="addon-item">
+                                    <input type="checkbox" id="vanilla-syrup" name="addons" value="Vanilla Syrup" data-price="0.50">
+                                    <label for="vanilla-syrup">Vanilla Syrup - $0.50</label>
+                                </div>
+                                <div class="addon-item">
+                                    <input type="checkbox" id="caramel-syrup" name="addons" value="Caramel Syrup" data-price="0.50">
+                                    <label for="caramel-syrup">Caramel Syrup - $0.50</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Special Instructions -->
+                        <div class="form-group">
+                            <label for="special-instructions">Special Instructions</label>
+                            <textarea id="special-instructions" name="special-instructions" placeholder="Any special requests or dietary restrictions?"></textarea>
+                        </div>
+
+                        <!-- Order Summary -->
+                        <div id="order-summary" class="order-summary">
+                            <h3>Order Summary</h3>
+                            <div class="summary-item">
+                                <span>Subtotal:</span>
+                                <span id="subtotal">$0.00</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Tax (8%):</span>
+                                <span id="tax">$0.00</span>
+                            </div>
+                            <div class="summary-item total">
+                                <span>Total:</span>
+                                <span id="total">$0.00</span>
+                            </div>
+                        </div>
+
+                        <!-- Form Actions -->
+                        <div class="form-actions">
+                            <button type="submit" class="btn">Place Order</button>
+                            <button type="reset" class="btn btn-outline">Clear Form</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div id="footer-logo" class="footer-logo">
+                    <h2>MR.COFFEE</h2>
+                    <p>Let Your Cup Unveil Its Tale</p>
+                </div>
+                <div id="footer-links" class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="rewards.html">Rewards</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="order.html">Order</a></li>
+                    </ul>
+                </div>
+                <div id="footer-contact" class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p>123 Coffee Street</p>
+                    <p>Brew City, BC 10101</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <p>Email: hello@mrcoffee.com</p>
+                </div>
+                <div id="footer-hours" class="footer-hours">
+                    <h3>Hours</h3>
+                    <p>Monday - Friday: 6am - 8pm</p>
+                    <p>Saturday: 7am - 8pm</p>
+                    <p>Sunday: 7am - 6pm</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MR.COFFEE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Order Confirmation Modal -->
+    <div class="modal" id="order-confirmation">
+        <div class="modal-content">
+            <span class="close-modal" id="close-confirmation">&times;</span>
+            <h2>Order Confirmed!</h2>
+            <p>Thank you for your order. We'll prepare it fresh for you!</p>
+            <div id="order-details"></div>
+            <p>You will receive a confirmation email shortly.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
